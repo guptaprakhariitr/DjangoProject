@@ -17,7 +17,7 @@ def api_detail(request):
 @api_view(['PUT',])
 def api_update(request,pk):
     try:
-        post = Post.objects.get(pk=request.pk)
+        post = Post.objects.get(pk=pk)
         serializer = BlogPostSerializer(post,data=request.data)
         data = {}
         if serializer.is_valid():
@@ -27,9 +27,9 @@ def api_update(request,pk):
     except Post.DoesNotExist:
         return Response(status = status.HTTP_400_BAD_REQUEST)
 @api_view(['DELETE',])
-def api_delete(request):
+def api_delete(request,pk):
     try:
-        post = Post.objects.get(pk=request.pk)
+        post = Post.objects.get(pk=pk)
         operation = post.delete()
         data= {}
         if operation:
