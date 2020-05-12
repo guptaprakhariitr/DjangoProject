@@ -1,0 +1,16 @@
+asgiref==3.2.7
+astroid==2.4.1
+-e git+https://github.com/django/django.git@c00bc27945d195295101c695e2a901b06b10fe96#egg=Django
+djangorestframework==3.11.0
+isort==4.3.21
+lazy-object-proxy==1.4.3
+mccabe==0.6.1
+pylint==2.5.2
+pylint-django==2.0.15
+pylint-plugin-utils==0.6
+pytz==2020.1
+six==1.14.0
+sqlparse==0.3.1
+toml==0.10.0
+typed-ast==1.4.1
+wrapt==1.12.1

@@ -10,12 +10,14 @@
         {% csrf_token %}
         <fieldset > 
             <legend>
-                Join today
+                Delete Post
             </legend>
-            {{form}}
         </fieldset>
-        <button type="submit">Sign up</button>
+        BE SURE TO DELETE {{object.title}}
+        <hr>
+        <button type="submit" >Yes Delete</button>
     </form>
-    <a href="{% url 'login' %}">Sign in</a>
+    <hr>
+    <a href="{% url 'post-detail' object.id %}">Cancel</a>
 </body>
 </html>

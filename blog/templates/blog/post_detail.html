@@ -7,25 +7,20 @@
 </head>
 <body>
     {%if user.is_authenticated %}
-    <div>
     <a href="{%url 'logout'%}">Logout</a>
-    ---------------------------
-    <a href="{%url 'post-create'%}">Create New Post</a>    
-    </div>
     <br>
-    {%for post in posts%}
-    <a href="{% url 'post-detail' post.id %}">
-    <hr>
-    <h1>{{post.title}}</h1>
-    </a>
-    <p>{{post.content}}</p>
+    <h1>{{object.title}}</h1>
+    <p>{{object.content}}</p>
     <h3>
-        {{post.author}}
+        {{object.author}}
     </h3>
     <h3>
-        {{post.date_posted}}
-    </h3> 
-    {%endfor%}
+        {{object.date_posted}}
+    </h3>
+    <hr>
+    <a href='{% url 'post-update' object.id %}'>Update This Post</a>
+    <hr>
+    <a href='{% url 'post-delete' object.id %}'>Delete This Post</a>
     {% else %}
     <a href="{%url 'login'%}">Login</a>
     {% endif %}
@@ -35,6 +30,5 @@
         {%endfor%}
     {%endif%}
     <br>
-    
 </body>
 </html>
