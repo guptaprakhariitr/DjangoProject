@@ -6,9 +6,6 @@ from django.contrib.auth.mixins import LoginRequiredMixin,UserPassesTestMixin
 # Create your views here.
 #function based views
 def home(request):
-    context={
-        'posts':Post.objects.all()
-    }
     return render(request,'blog/blog.html',context)
 def about(request):
     return render(request,'blog/about.html')
